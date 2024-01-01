@@ -10,6 +10,11 @@ function App() {
     "I am learning React and improving my web development skills.";
   const skills = ["HTML", "CSS", "JavaScript", "React"];
 
+  const inputType = "number";
+  const minYear = 2020;
+  const maxYear = new Date().getFullYear();
+  const textAreaRows = 4;
+
   return (
     <div>
       <header>
@@ -21,6 +26,21 @@ function App() {
         <section>
           <h2>About Me</h2>
           <p>{introduction}</p>
+          <label htmlFor="name">Your Name</label>
+          <input
+            id="name"
+            type="text"
+            placeholder="Enter your name"
+            autoFocus
+          />
+
+          <label htmlFor="introduction">Tell us about yourself</label>
+          <textarea
+            id="introduction"
+            rows={textAreaRows}
+            placeholder="Write a short introduction..."
+            maxLength={24}
+          />
         </section>
 
         <section>
@@ -39,6 +59,14 @@ function App() {
           <h2>Learning Progress</h2>
           <p>Welcome to my learning journey in {new Date().getFullYear()}</p>
           <p>Next year will be {new Date().getFullYear() + 1}</p>
+          <label htmlFor="start-year">Starting Year</label>
+          <input
+            id="start-year"
+            type={inputType}
+            min={minYear}
+            max={maxYear}
+            defaultValue={minYear}
+          />
         </section>
 
         <footer>
