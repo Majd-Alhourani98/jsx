@@ -43,6 +43,17 @@ function App() {
 
       {/* EXPRESSION — RENDERABLE */}
       <p>{2 + 1}</p>
+
+      {/* CUSTOMIZING ELEMENTS WITH PROPS */}
+
+      <input
+        type="number"
+        min={5}
+        max={20}
+        style={{ border: "3px solid red", padding: "12px" }}
+      />
+
+      <textarea autoFocus spellCheck maxLength={5} className="input" />
     </div>
   );
 }
