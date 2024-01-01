@@ -1,23 +1,50 @@
-// 1) Import React and ReactDOM
 import React from "react";
 import ReactDOM from "react-dom/client";
 
-// 2) Get the div with the id "root"
 const rootElement = document.getElementById("root");
-
-// 3) Tell React to take control of it
 const root = ReactDOM.createRoot(rootElement);
 
-// 4) Create a component
 function App() {
-  let message = "By there!";
+  const string = "Hello React";
+  const number = 42;
+  const booleanTrue = true;
+  const booleanFalse = false;
+  const nullValue = null;
+  const undefinedValue = undefined;
+  const array = [1, 2, 3];
+  const object = { name: "React" };
 
-  if (Math.random() > 0.5) {
-    message = "Hello there!";
-  }
+  return (
+    <div>
+      {/* STRING — RENDERABLE */}
+      <p>{string}</p>
 
-  return <h1>{message.toUpperCase()}</h1>;
+      {/* NUMBER — RENDERABLE */}
+      <p>{number}</p>
+
+      {/* BOOLEAN — NOT RENDERABLE */}
+      <p>{booleanTrue}</p>
+      <p>{booleanFalse}</p>
+
+      {/* NULL — NOT RENDERABLE */}
+      <p>{nullValue}</p>
+
+      {/* UNDEFINED — NOT RENDERABLE */}
+      <p>{undefinedValue}</p>
+
+      {/* ARRAY — RENDERABLE */}
+      <p>{array}</p>
+
+      {/* OBJECT — NOT RENDERABLE - produce error*/}
+      {/* <p>{object}</p> */}
+
+      {/* OBJECT PROPERTY — RENDERABLE */}
+      <p>{object.name}</p>
+
+      {/* EXPRESSION — RENDERABLE */}
+      <p>{2 + 1}</p>
+    </div>
+  );
 }
 
-// 5) Show the component on the screen
 root.render(<App />);
