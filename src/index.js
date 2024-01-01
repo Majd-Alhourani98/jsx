@@ -15,14 +15,30 @@ function App() {
   const maxYear = new Date().getFullYear();
   const textAreaRows = 4;
 
+  const mainStyle = {
+    maxWidth: "700px",
+    margin: "30px auto",
+    padding: "24px",
+    fontFamily: "Arial, sans-serif",
+    lineHeight: 1.6,
+    backgroundColor: "#f3f3f3",
+  };
+
   return (
     <div>
-      <header>
+      <header
+        style={{
+          backgroundColor: "#1e293b",
+          color: "white",
+          padding: "24px",
+          textAlign: "center",
+        }}
+      >
         <h1>{name}</h1>
         <p>{role}</p>
       </header>
 
-      <main>
+      <main style={mainStyle}>
         <section>
           <h2>About Me</h2>
           <p>{introduction}</p>
